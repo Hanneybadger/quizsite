@@ -12,14 +12,14 @@
 
 	<div class="content">
 		<div class="title">
-		
+
 			<h1>{{ quiz.name }}</h1>
 				<p>
 				{{ quiz.description }}
 				</p>
 
 			<div class="button">
-				<a href="quizmedogquestions.html">Starta hundquizet</a>
+				<a href="{% url "question_page" quiz_slug 1 %}">Starta hundquiz</a>
 			</div>
 
 		</div>
