@@ -17,17 +17,13 @@
 				Här finns de fetaste quizen på hela internet. Gör mina quizzar och svara <br>rätt på alla frågorna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</p>
 
-			<div class="button">
-				<a href="quizmedog.html">hundquizet</a>
-			</div>
+			{% for quiz_slug, quiz in quizzes.items %}
+			
+				<div class="button">
+					<a href="quizmedog.html">{{ quiz.name }}</a>
+				</div>
 
-			<div class="button">
-				<a href="">tatueringsquizet</a>
-			</div>
-
-			<div class="button">
-				<a href="">quizet om katter</a>
-			</div>
+			{% endfor %}
 
 		</div>
 
