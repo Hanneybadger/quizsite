@@ -20,7 +20,11 @@
 			{% for quiz_slug, quiz in quizzes.items %}
 			
 				<div class="button">
-					<a href="quizmedog.html">{{ quiz.name }}</a>
+
+					<a href="{% url "quiz_page" quiz_slug %}">
+						{{ quiz.name }}
+					</a>
+
 				</div>
 
 			{% endfor %}
