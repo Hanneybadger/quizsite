@@ -1,3 +1,6 @@
+from django.contrib import admin
+from django.conf.urls import include
+
 """quizsite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -27,4 +30,5 @@ urlpatterns = [
 	url(r"^quiz/([a-z-]+)/$", views.quiz, name="quiz_page"),
 	url(r"^quiz/([a-z-]+)/question/([0-9]+)/$", views.question, name="question_page"),
 	url(r"^quiz/([a-z-]+)/completed/$", views.completed, name="completed_page"),
+	url(r'^admin/', include(admin.site.urls)),
 ]
