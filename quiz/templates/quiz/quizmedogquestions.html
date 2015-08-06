@@ -12,18 +12,16 @@
 	<div class="content">
 
 		<div class="title">
-			<h2>Fråga 01</h2>
+			<h2>{{ question_number }}.</h2>
 			
 				<p>
-				Vilken hund är bäst?
+				{{ question }}
 				</p>
 			
 			<form>
-				<input type="radio" name="01" value="Pitbull"> Pitbull<br>
-				<input type="radio" name="01" value="Tax"> Tax<br>
-				<input type="radio" name="01" value="Fransk"> Fransk bulldog<br>
-				<input type="radio" name="01" value="Basenji"> Basenji<br>
-				<input type="radio" name="01" value="Alla"> Alla är lika bra<br>
+				<input type="radio" name="01" value="Pitbull"> {{ answer1 }}<br>
+				<input type="radio" name="01" value="Tax"> {{ answer2 }} <br>
+				<input type="radio" name="01" value="Fransk"> {{ answer3 }} <br><br>
 			</form>
 
 			<div class="button">
