@@ -18,16 +18,19 @@
 				{{ question }}
 				</p>
 			
-			<form>
-				<input type="radio" name="01" value="Pitbull"> {{ answer1 }}<br>
-				<input type="radio" name="01" value="Tax"> {{ answer2 }} <br>
-				<input type="radio" name="01" value="Fransk"> {{ answer3 }} <br>
-				<input type="radio" name="01" value="Fransk"> {{ answer4 }} <br><br>
+			<form action="{% url "question_page" quiz.slug question_number %}" method="post">
+			{% csrf_token %}	
+				<label><input type="radio" name="answer" value="1"> {{ answer1 }}</label><br>
+				<label><input type="radio" name="answer" value="2"> {{ answer2 }}</label> <br>
+				<label><input type="radio" name="answer" value="3"> {{ answer3 }}</label> <br>
+				<label><input type="radio" name="answer" value="4"> {{ answer4 }}</label> <br>
+
+					<div class="button">
+					<a href="{% url "question_page" quiz.slug question_number|add:1 %}"><button type="submit">Nästa</button></a>
+
+			</div>
 			</form>
 
-			<div class="button">
-				<a href="{% url "question_page" quiz.slug question_number|add:1 %}">Nästa fråga</a>
-			</div>
 		</div>
 
 	</div>
