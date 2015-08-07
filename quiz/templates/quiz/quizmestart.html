@@ -17,11 +17,11 @@
 				Här finns de fetaste quizen på hela internet. Gör mina quizzar och svara <br>rätt på alla frågorna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 				</p>
 
-			{% for quiz_slug, quiz in quizzes.items %}
+			{% for quiz in quizzes %}
 			
 				<div class="button">
 
-					<a href="{% url "quiz_page" quiz_slug %}">
+					<a href="{% url "quiz_page" quiz.slug %}">
 						{{ quiz.name }}
 					</a>
 
