@@ -15,21 +15,19 @@
 			<h2>{{ question_number }}.</h2>
 			
 				<p>
-				{{ question }}
-				</p>
+				{{ question }}</p>
+				
 			
 			<form action="{% url "question_page" quiz.slug question_number %}" method="post">
 			{% csrf_token %}	
-				<label><input type="radio" name="answer" value="1"> {{ answer1 }}</label><br>
-				<label><input type="radio" name="answer" value="2"> {{ answer2 }}</label> <br>
-				<label><input type="radio" name="answer" value="3"> {{ answer3 }}</label> <br>
+				<label><input type="radio" name="answer" value="1"> {{ answer1 }}</label> <br><br>
+				<label><input type="radio" name="answer" value="2"> {{ answer2 }}</label> <br><br>
+				<label><input type="radio" name="answer" value="3"> {{ answer3 }}</label> <br><br>
 				<label><input type="radio" name="answer" value="4"> {{ answer4 }}</label> <br>
 
-					<div class="button">
-					<a href="{% url "question_page" quiz.slug question_number|add:1 %}"><button type="submit">Nästa</button></a>
-
-			</div>
+				<a href="{% url "question_page" quiz.slug question_number|add:1 %}"><button type="submit">Nästa</button></a>
 			</form>
+			</p>
 
 		</div>
 
