@@ -39,7 +39,7 @@ def quiz(request, slug):
 def question(request, slug, number):
 	number = int(number)
 	quiz = Quiz.objects.get(slug=slug)
-	questions = quiz.questions.all().order_by("-id")
+	questions = quiz.questions.all().order_by("id")
 
 	if request.POST:
 		answer = int(request.POST["answer"])
@@ -73,7 +73,7 @@ def question(request, slug, number):
 
 def completed(request, slug):
 	quiz = Quiz.objects.get(slug=slug)
-	questions = quiz.questions.all().order_by("-id")
+	questions = quiz.questions.all().order_by("id")
 	saved_answers = request.session[slug]
 	num_correct_answers = 0
 	for counter, question in enumerate(questions):
