@@ -14,28 +14,44 @@
 		<div class="title">
 			<h1>Tack!</h1>
 			<p>
-			Du fick {{ correct }} rätt av {{ total }}. Vad du svarade rätt och fel på är mindre viktigt, här ser du vilka svar som faktiskt är rätt:</p>
+			Du fick {{ correct }} rätt av {{ total }}! Här kan du se vilket svar som är rätt och vad du själv svarade på varje fråga:</p>
 
-				{% for question in questions %}
+		{% for question in questions %}
 				{{ question.question }}<br>
-
 					{% if question.correct == 1 %}
-						{{ question.answer1 }}
+						Rätt svar: <b>{{ question.answer1 }}</b>
 					{% endif %}
 
 					{% if question.correct == 2 %}
-						{{ question.answer2 }}
+						Rätt svar: <b>{{ question.answer2 }}</b>
 					{% endif %}
 
 					{% if question.correct == 3 %}
-						{{ question.answer3 }}
+						Rätt svar: <b>{{ question.answer3 }}</b>
 					{% endif %}
 
 					{% if question.correct == 4 %}
-						{{ question.answer4 }}
-					{% endif %}<br><br>
+						Rätt svar: <b>{{ question.answer4 }}</b>
+					{% endif %}<br>
+		{% for question_number, user_answer in saved_answers.items %}
+			{% if question_number == forloop.parentloop.counter|stringformat:"s" %}
+				{% if user_answer == 1 %}
+					Ditt svar: <b>{{ question.answer1 }}</b>
+				{% endif %}
+				{% if user_answer == 2 %}
+					Ditt svar: <b>{{ question.answer2 }}</b>
+				{% endif %}
+				{% if user_answer == 3 %}
+					Ditt svar: <b>{{ question.answer3 }}</b>
+				{% endif %}
+				{% if user_answer == 4 %}
+					Ditt svar: <b>{{ question.answer4 }}</b>
+				{% endif %}<br><br>
+			{% endif %}
+	{% endfor %}
+	{% endfor %}
 
-				{% endfor %}
+
 
 			<div class="button">
 				<a href="{% url "start_page" %}">Till startsidan</a>

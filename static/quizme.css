@@ -54,8 +54,8 @@ input {
 	margin: 0 auto;
 }
 
-.correctanswer {
-	font-weight: bold;
+.wrong {
+	font-color: #808080;
 }
 
 .content {
