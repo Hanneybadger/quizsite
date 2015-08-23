@@ -3,7 +3,7 @@
 
 	<head>
 		<title>Hanneybadger</title>
-		<meta charset="utf-8">
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="/static/normalize.css">
 		<link rel="stylesheet" href="/static/quizme.css">
 	</head>
@@ -14,8 +14,29 @@
 		<div class="title">
 			<h1>Tack!</h1>
 			<p>
-			Du fick {{ correct }} rätt av {{ total }}. Du vet inte lika mycket om hundar som jag, men om du är villig att lära dig kan du snart göra det. Kämpa!
-			</p>
+			Du fick {{ correct }} rätt av {{ total }}. Vad du svarade rätt och fel på är mindre viktigt, här ser du vilka svar som faktiskt är rätt:
+				<br><br>
+
+				</p>
+				{% for question in questions %}
+				{{ question }}
+				<div class="correctanswer">
+				
+				{% if question.correct == 1 %}
+					{{ question.answer1 }}
+				{% endif %}
+				{% if question.correct == 2 %}
+					{{ question.answer2 }}
+				{% endif %}
+				{% if question.correct == 3 %}
+					{{ question.answer3 }}
+				{% endif %}
+				{% if question.correct == 4 %}
+					{{ question.answer4 }}
+				{% endif %}
+				
+				</div><br>
+				{% endfor %}
 
 			<div class="button">
 				<a href="{% url "start_page" %}">Till startsidan</a>

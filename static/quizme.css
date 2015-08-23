@@ -54,6 +54,10 @@ input {
 	margin: 0 auto;
 }
 
+.correctanswer {
+	font-weight: bold;
+}
+
 .content {
 	border-color: black;
 	border-style: solid;
