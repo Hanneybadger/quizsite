@@ -14,28 +14,27 @@
 		<div class="title">
 			<h1>Tack!</h1>
 			<p>
-			Du fick {{ correct }} rätt av {{ total }}. Vad du svarade rätt och fel på är mindre viktigt, här ser du vilka svar som faktiskt är rätt:
-				<br><br>
+			Du fick {{ correct }} rätt av {{ total }}. Vad du svarade rätt och fel på är mindre viktigt, här ser du vilka svar som faktiskt är rätt:</p>
 
-				</p>
 				{% for question in questions %}
-				{{ question.question }}
-				<div class="correctanswer">
-				
-				{% if question.correct == 1 %}
-					{{ question.answer1 }}
-				{% endif %}
-				{% if question.correct == 2 %}
-					{{ question.answer2 }}
-				{% endif %}
-				{% if question.correct == 3 %}
-					{{ question.answer3 }}
-				{% endif %}
-				{% if question.correct == 4 %}
-					{{ question.answer4 }}
-				{% endif %}
-				
-				</div><br>
+				{{ question.question }}<br>
+
+					{% if question.correct == 1 %}
+						{{ question.answer1 }}
+					{% endif %}
+
+					{% if question.correct == 2 %}
+						{{ question.answer2 }}
+					{% endif %}
+
+					{% if question.correct == 3 %}
+						{{ question.answer3 }}
+					{% endif %}
+
+					{% if question.correct == 4 %}
+						{{ question.answer4 }}
+					{% endif %}<br><br>
+
 				{% endfor %}
 
 			<div class="button">
